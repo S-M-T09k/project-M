@@ -1,0 +1,21 @@
+html {
+  color-scheme: dark light;
+}
+
+body {
+  /* background-color: #111111; */
+}
+
+.centerGrid{
+  display: grid; 
+  grid-template-columns: 1fr; 
+  grid-template-rows: repeat(auto-fit, minmax(100px, auto)); 
+  justify-items: center; 
+  align-items: center; 
+}
+.centerFlex {
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center;
+}

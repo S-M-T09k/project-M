@@ -3,7 +3,8 @@ html {
 }
 
 body {
-  /* background-color: #111111; */
+  background-color: #111111;
+  color: #dddddd;
 }
 
 .centerGrid{

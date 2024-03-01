@@ -12,7 +12,7 @@ document.querySelectorAll(".onlyNumbers").forEach(element => {
 
 const form = document.querySelector('form');
 form.addEventListener('submit', (event) => {
-  event.preventDefault();
+  // event.preventDefault();
   console.log(event);
   const name = document.querySelector('form input[type="text"]').value;
   const index = document.querySelector('form .onlyNumbers').value;

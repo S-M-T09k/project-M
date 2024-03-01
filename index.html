@@ -7,11 +7,33 @@
   <title>Project-M</title>
   <link rel="stylesheet" href="./style.css">
   <link rel="shortcut icon" href="./images/favicon.png" type="image">
+
+  <script type="text/javascript">
+    if (sessionStorage.length < 2) {
+      window.location.href = "./login/index.html";
+    };
+  </script>
 </head>
 
 <body>
 
-  I'll eventually add something
+  <div class="centerFlex">
+    <h1>Project-M</h1>
+    <p class="welcomeText">Welcome, <span></span>, how's your day?</p>
+    <div class="card">
+      <div class="innerCard">
+
+        <div class="back cardContainer">
+          <img src="./images/cards/dis/purple_back.png" alt="purple card back" class="cardBack">
+        </div>
+
+        <div class="front cardContainer">
+          <img src="./images/cards/AS.png" alt="Ace of Clubs" class="cardFront">
+        </div>
+
+      </div>
+    </div>
+  </div>
 
   <script src="./index.js"></script>
 </body>

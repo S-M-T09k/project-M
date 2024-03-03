@@ -1,10 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 html {
   color-scheme: dark;
+  scroll-behavior: smooth;
 }
 
 body {
   background: #3f5efb;
   background: radial-gradient(circle, #3f5efb 0%, #a73ec1 50%, #fc466b 100%);
+}
+
+nav {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  height: 3em;
+  width: 100%;
+  background-color: #3f5efb50;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1em;
+}
+
+nav .navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  height: 100%;
+  margin: auto;
+}
+
+nav .navBar .logo a {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5em;
+  color: #f4a701;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+nav .navBar .menu {
+  display: flex;
+}
+
+.navBar .menu li {
+  list-style: none;
+  margin: 0 1em;
+}
+
+.navBar .menu li a {
+  text-decoration: none;
+  color: antiquewhite;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
 }
 
 .centerGrid {
@@ -29,21 +76,26 @@ body {
 }
 
 #title {
-  font-size: 2em;
+  font-size: 2.5em;
   font-family: 'Courier New', Courier, monospace;
   color: #f4d201;
   text-transform: uppercase;
   padding: 0px;
   margin: 3px;
+  cursor: crosshair;
 }
 
 .welcomeText {
   font-family: monospace;
-  font-size: larger;
+  font-size: 1ic;
   padding-top: 0;
   margin-top: 2px;
   margin-bottom: 35px;
   text-align: center;
+}
+
+.welcomeText span {
+  cursor: crosshair;
 }
 
 .innerCard {
@@ -57,6 +109,7 @@ body {
 
 .card {
   perspective: 1000px;
+  padding-bottom: 2.5em;
 }
 
 .card img {

@@ -1,4 +1,5 @@
 const cardDisplay = document.querySelector('.card .innerCard');
+const TheCard = document.querySelector('.card');
 const cardFront = document.querySelector('.card .front');
 const cardBack1 = document.querySelector('.card .back1');
 const cardBack2 = document.querySelector('.card .back2');
@@ -9,9 +10,10 @@ const cardFrontImage = document.querySelector('.card .front img');
 const nameDisplay = document.querySelector('.welcomeText span');
 const title = document.querySelector('#title');
 const welcomeText = document.querySelector('.welcomeText');
+const rickRoll = document.querySelector('#rickRoll a');
 
 const allLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*/-+=_~<>?|;:{}[]()";
-const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ-";
 const numbers = "1234567890";
 const symbols = "!@#$%^&*/-+=_~<>?|;:{}[]()";
 
@@ -50,24 +52,29 @@ const cards = {
 };
 // console.log(cards.toDirectory());
 
+rickRoll.addEventListener('click', () => {
+  sessionStorage.setItem('rickRolled', 'true');
+});
+
 nameDisplay.textContent = sessionStorage.getItem('name');
+rickRoll.textContent = sessionStorage.getItem('rickRolled') === 'true' ? "I'm sorry" : rickRoll.textContent;
 
 switch (sessionStorage.getItem('index')) {
   case '1':
+    cardFrontImage.setAttribute('src', cards.toDirectory().diamonds[3]);
+    cardFrontImage.setAttribute('alt', '4 of diamonds');
+    break;
+  case '2':
     cardFrontImage.setAttribute('src', cards.toDirectory().spades[2]);
     cardFrontImage.setAttribute('alt', '3 of spades');
     break;
-  case '2':
+  case '3':
     cardFrontImage.setAttribute('src', cards.toDirectory().hearts[9]);
     cardFrontImage.setAttribute('alt', '10 of hearts');
     break;
-  case '3':
+  case '4':
     cardFrontImage.setAttribute('src', cards.toDirectory().clubs[12]);
     cardFrontImage.setAttribute('alt', 'king of clubs');
-    break;
-  case '4':
-    cardFrontImage.setAttribute('src', cards.toDirectory().hearts[3]);
-    cardFrontImage.setAttribute('alt', '4 of hearts');
     break;
   case '5':
     cardFrontImage.setAttribute('src', cards.toDirectory().clubs[5]);
@@ -101,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => { changeTitle(); changeUserN
 const welcomeText_Text = welcomeText.textContent;
 function changeTitle() {
   let iterations = -5;
-  let time = 50;
+  let time = 75;
   const forthIntervalID = setInterval(changeText, time);
 
   function changeText() {
@@ -111,6 +118,9 @@ function changeTitle() {
       }
       else {
         return letters[Math.floor(Math.random() * letters.length)];
+        return symbols[Math.floor(Math.random() * symbols.length)];
+        return numbers[Math.floor(Math.random() * numbers.length)];
+        return allLetters[Math.floor(Math.random() * allLetters.length)];
       }
     }).join("");
 
@@ -151,6 +161,7 @@ function changeUserName() {
   let iterations = -5;
   let time = 50;
   const forthIntervalID = setInterval(changeText, time);
+  let length = symbols.length;
 
   function changeText() {
     nameDisplay.textContent = nameDisplay.textContent.split("").map((letter, index) => {
@@ -158,6 +169,10 @@ function changeUserName() {
         return sessionStorage.getItem('name')[index];
       }
       else {
+        // return symbols[symbols.length - length];
+        // return letters[Math.floor(Math.random() * letters.length)];
+        // return symbols[Math.floor(Math.random() * symbols.length)];
+        // return numbers[Math.floor(Math.random() * numbers.length)];
         return allLetters[Math.floor(Math.random() * allLetters.length)];
       }
     }).join("");
@@ -168,6 +183,7 @@ function changeUserName() {
     };
 
     iterations++;
+    length--;
   };
 }
 
@@ -188,3 +204,7 @@ function unSpreadCards() {
   cardBack4.style.transform = `rotateZ(0deg)`;
 
 }
+
+// TheCard.addEventListener('dblclick', () => {
+//   cardDisplay.style.display = "none";
+// });

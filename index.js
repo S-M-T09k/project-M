@@ -82,7 +82,21 @@ switch (sessionStorage.getItem('index')) {
     break;
 
   case '=':
-
+    let password = undefined;
+    console.log(sessionStorage.getItem('password'));
+    if (sessionStorage.getItem('password') !== password) {
+      password = window.prompt("please enter the password");
+      if (password === null) {
+        window.location.href = './login/index.html';
+        break;
+      };
+      window.alert("Entered Development mode");
+      sessionStorage.setItem('password', password);
+      window.alert(`what made you think that I would have my password as "${sessionStorage.getItem('password')}"?`);
+      window.alert(`by the way, "Developer mode" does nothing`);
+    };
+    cardFrontImage.setAttribute('src', './images/cards/dis/blue_back.png');
+    cardFrontImage.setAttribute('alt', 'blue back');
     break;
 };
 

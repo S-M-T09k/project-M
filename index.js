@@ -1,3 +1,7 @@
+import getFacts from './fetch requests/random facts.js';
+import { wordFlick } from "./fact typing.js";
+
+const factDisplay = document.querySelector('#fact');
 const cardDisplay = document.querySelector('.card .innerCard');
 const TheCard = document.querySelector('.card');
 const cardFront = document.querySelector('.card .front');
@@ -55,6 +59,16 @@ const cards = {
 rickRoll.addEventListener('click', () => {
   sessionStorage.setItem('rickRolled', 'true');
 });
+
+async function getFactAndFlickWords() {
+  const facts = await getFacts();
+  console.log(facts);
+  // factDisplay.textContent = fact;
+
+  wordFlick(facts);
+}
+
+getFactAndFlickWords();
 
 nameDisplay.textContent = sessionStorage.getItem('name');
 rickRoll.textContent = sessionStorage.getItem('rickRolled') === 'true' ? "I'm sorry" : rickRoll.textContent;

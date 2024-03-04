@@ -201,4 +201,4 @@ dist
 # End of https://www.toptal.com/developers/gitignore/api/windows,visualstudiocode,text
 
 test.js
-project-m.zip
+*.zip

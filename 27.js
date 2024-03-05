@@ -4,7 +4,7 @@ const TwentySeven = [
   [[19, 20, 21], [22, 23, 24], [25, 26, 27]],
 ]
 
-let number = 20;
+let number = 16;
 
 function findPattern(number) {
   for (let i = 0; i < TwentySeven.length; i++) {

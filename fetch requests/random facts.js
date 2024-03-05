@@ -2,7 +2,7 @@ const url = 'https://api.api-ninjas.com/v1/facts?limit=5';
 const options = {
   method: 'GET',
   headers: {
-    'X-Api-Key': '5XeMLlzJxJ/vp4349SnG8Q==0tS43MGK2rmdVvny'
+    'X-Api-Key': ''
   },
   contentType: 'application/json',
 };
